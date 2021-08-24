@@ -3,6 +3,7 @@ package me.peytonpeck.customarray;
 public class ArrayRunner {
 
     public static void main(String[] args) {
+        //Test Line
         Array<Integer> array = new Array<>();
 
         array.insert(10);
