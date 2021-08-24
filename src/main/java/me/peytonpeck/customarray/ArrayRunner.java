@@ -3,19 +3,23 @@ package me.peytonpeck.customarray;
 public class ArrayRunner {
 
     public static void main(String[] args) {
-        //Test Line
-        Array<Integer> array = new Array<>();
+        int testLength = 300000;
 
-        array.insert(10);
-        array.insert(20);
-        array.insert(30);
+        Array<Integer> array = new Array<>(3);
 
-        array.print();
+        long start = System.nanoTime();
+        for (int i = 0; i < testLength; i++)
+            array.insert(i);
+        long end = System.nanoTime();
 
-        array.removeAt(1);
+        OldArray<Integer> oldArray = new OldArray<>();
 
-        array.print();
+        long start2 = System.nanoTime();
+        for (int i = 0; i < testLength; i++)
+            oldArray.insert(i);
+        long end2 = System.nanoTime();
 
-        System.out.println(array.indexOf(10));
+        System.out.println((double)(end-start)/(double)1000000000 + "seconds (new)");
+        System.out.println((double)(end2-start2)/(double)1000000000 + "seconds (old)");
     }
 }
