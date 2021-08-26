@@ -1,5 +1,8 @@
 package me.peytonpeck.customarray;
 
+import java.util.Collection;
+import java.util.function.Predicate;
+
 public class IntArray {
 
     private int[] array;
@@ -31,6 +34,7 @@ public class IntArray {
     public void print() {
         for (int i = 0; i < count; i++)
             System.out.println(array[i]);
+        System.out.println();
     }
 
     public int max() {
@@ -57,6 +61,10 @@ public class IntArray {
     }
 
     public void insertAt(int index, int item) {
+
+        if (index < 0 || index > count)
+            throw new IllegalArgumentException("You must enter an index greater than 0 but less than or equal to the count!");
+
         int[] temp;
 
         if (count == array.length)
@@ -75,6 +83,51 @@ public class IntArray {
             array = temp;
             count++;
     }
+
+    public void clear() {
+        for (int i = 0; i < count; i++)
+            array[i] = 0;
+
+        count = 0;
+    }
+
+    public int size() {
+        return count;
+    }
+
+    public boolean isEmpty() {
+        return count == 0;
+    }
+
+    public boolean contains(int item) {
+        for (int i : array)
+            if (i == item)
+                return true;
+
+            return false;
+    }
+
+    public void removeIf(Predicate<Integer> predicate) {
+        boolean bool;
+
+        do {
+            bool = false;
+            for (int i = 0; i < count; i ++) {
+                if (predicate.test(array[i])) {
+                    removeAt(i);
+                    bool = true;
+                    break;
+                }
+            }
+        } while (bool);
+    }
+
+    public void insertAll(int... items) {
+        for (int i : items)
+            insert(i);
+    }
+
+
     
     
 }
