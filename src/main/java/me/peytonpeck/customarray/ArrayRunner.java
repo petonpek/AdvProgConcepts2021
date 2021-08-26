@@ -6,34 +6,28 @@ import java.util.List;
 public class ArrayRunner {
 
     public static void main(String[] args) {
-        int testLength = 200000;
+        IntArray array = new IntArray(2);
 
-        Array<Integer> array = new Array<>(3);
+        array.insert(10);
+        array.insert(20);
+        array.insert(30);
+        array.insert(40);
+        array.insert(50);
 
-        long start = System.nanoTime();
-        for (int i = 0; i < testLength; i++)
-            array.insert(i);
-        long end = System.nanoTime();
+        array.print();
+        System.out.println();
 
-        OldArray<Integer> oldArray = new OldArray<>();
+        array.insertAt(1, 15);
 
-        long start2 = System.nanoTime();
-        for (int i = 0; i < testLength; i++)
-            oldArray.insert(i);
-        long end2 = System.nanoTime();
-        
-        List<Integer> list = new LinkedList<>();
+        array.print();
+        System.out.println();
 
-        long start3 = System.nanoTime();
-        for (int i = 0; i < testLength; i++) {
-            if (i % (testLength/10) == 0)
-                System.out.println(i);
-            list.add(i);
-        }
-        long end3 = System.nanoTime();
+        array.removeAt(1);
+        array.print();
 
-        System.out.println((double)(end-start)/(double)1000000000 + "seconds (new)");
-        System.out.println((double)(end2-start2)/(double)1000000000 + "seconds (old)");
-        System.out.println((double)(end3-start3)/(double)1000000000 + "seconds (linked)");
+        System.out.println("max: " + array.max());
+
+        array.reverse();
+        array.print();
     }
 }
