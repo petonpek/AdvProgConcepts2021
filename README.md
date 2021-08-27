@@ -1,2 +1,3 @@
 # AdvProgConcepts2021
-Contains modules for various projects with main methods to run each module.
+
+Project for school. Each module is intended to contain a "runner" class with a main method for testing.
