@@ -1,4 +1,4 @@
-package me.peytonpeck.customarray;
+package me.p3074098.test;
 
 public class Array<T> {
 

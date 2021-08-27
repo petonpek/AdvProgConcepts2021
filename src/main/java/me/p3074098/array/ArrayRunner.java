@@ -1,7 +1,4 @@
-package me.peytonpeck.customarray;
-
-import java.util.LinkedList;
-import java.util.List;
+package me.p3074098.array;
 
 public class ArrayRunner {
 

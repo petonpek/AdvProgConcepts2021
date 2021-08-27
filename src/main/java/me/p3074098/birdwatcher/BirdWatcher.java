@@ -1,4 +1,4 @@
-package me.peytonpeck.runnerfun;
+package me.p3074098.birdwatcher;
 
 public class BirdWatcher {
 
