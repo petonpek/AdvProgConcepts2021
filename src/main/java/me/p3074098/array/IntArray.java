@@ -17,8 +17,8 @@ public class IntArray {
         
         for (int i = index; i < count - 1; i++)
             array[i] = array[i + 1];
-        
-        array[count--] = 0;
+
+        count--;
     }
     
     public int indexOf(int object) {
