@@ -12,7 +12,7 @@ public class ArrayRunner {
         array.insertAll(40, 60, 70, 80, 90, 100);
 
         array.insertAt(4, 50);
-        
+
         array.print();
 
         System.out.println("Reverse!");
