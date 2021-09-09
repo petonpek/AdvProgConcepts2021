@@ -22,7 +22,7 @@ public class FunLinkedList<T> {
         }
 
         if (index == count) {
-            tail.setNext(node);
+            tail.next = node;
             tail = node;
             count++;
             return;
@@ -30,28 +30,16 @@ public class FunLinkedList<T> {
 
         Node<T> next = head;
         for (int i = 0; i < index - 1; i++)
-            next = next.getNext();
+            next = next.next;
 
-        Node<T> replaced = next.getNext();
+        Node<T> replaced = next.next;
 
-        next.setNext(node);
-        node.setNext(replaced);
+        next.next = node;
+        node.next = replaced;
     }
 
     public FunLinkedList() {
 
-    }
-
-    public void add(T data) {
-        if (head == null)
-            head = new Node<>(data);
-
-        Node<T> node = new Node<>(data);
-        Node<T> next = head;
-
-        while (next.getNext() != null) {
-            next = next.getNext();
-        }
     }
 
     public void remove(int index) {
@@ -60,17 +48,17 @@ public class FunLinkedList<T> {
             throw new IllegalArgumentException("You must enter an index that is within the bounds of the size of the list");
 
         if (index == 0) {
-            head = head.getNext();
+            head = head.next;
             count--;
             return;
         }
 
         Node<T> next = head;
         for (int i = 0; i < index-1; i++)
-            next = next.getNext();
+            next = next.next;
 
-        Node<T> after = next.getNext().getNext();
-        next.setNext(after);
+        Node<T> after = next.next.next;
+        next.next = after;
 
         count--;
     }
@@ -78,10 +66,10 @@ public class FunLinkedList<T> {
     public void remove(T object) {
         Node<T> next = head;
         for (int i = 0; i < count; i++)
-            if(next.getData().equals(object))
+            if(next.data.equals(object))
                 remove(i);
             else
-                next = next.getNext();
+                next = next.next;
     }
 
     public int getSize() {

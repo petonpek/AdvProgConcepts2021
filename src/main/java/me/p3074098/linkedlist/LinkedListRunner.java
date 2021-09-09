@@ -13,8 +13,8 @@ public class LinkedListRunner {
 
         Node<Integer> node = list.getHead();
         while (node != null) {
-            System.out.println(node.getData());
-            node = node.getNext();
+            System.out.println(node.data);
+            node = node.next;
         }
     }
 }

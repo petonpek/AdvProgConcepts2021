@@ -1,4 +1,4 @@
-package me.p3074098.linkedlist;
+package me.p3074098.linkedlist.ignorethis;
 
 public class NodeFun {
 
