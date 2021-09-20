@@ -1,5 +1,7 @@
 package me.p3074098.newlinkedlist;
 
+import java.util.LinkedList;
+
 public class LList {
 
     private Node head;
@@ -11,7 +13,7 @@ public class LList {
     }
 
     public void addEnd(int value) {
-        
+
     }
 
     private static class Node {
