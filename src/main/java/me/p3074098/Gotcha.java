@@ -17,15 +17,8 @@ public class Gotcha {
 
     public void load() {
         List<String> names;
-        try {
-            File file = new File("src/main/me.p3074098/gotcha.txt");
-            System.out.println(file.getAbsolutePath());
-            names = Files.readAllLines(Paths.get(file.getAbsolutePath()));
-        }catch (IOException e){
-            return;
-        }
 
-        names.forEach(n -> System.out.println(n));
+        //load
     }
 
     public static void main(String[] args) {
