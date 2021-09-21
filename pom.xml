@@ -13,4 +13,23 @@
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
+    <build>
+
+        <finalName>${project.name}</finalName>
+
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>me.p3074098.Gotcha</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
