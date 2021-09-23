@@ -29,4 +29,6 @@ public class Person {
     public int getRoundOut() {
         return roundOut;
     }
+
+    public void serialize()
 }
